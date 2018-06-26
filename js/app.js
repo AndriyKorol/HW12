@@ -52,18 +52,7 @@ class UI {
       document.querySelector('.alert').remove();
       btn.disabled = false;
     }, 3000);
-  }
-
-  //delete item from the list
-  deleteItem(id){
-      const items = document.querySelectorAll('tr');
-      let itemsArray = Array.prototype.slice.call(items);
-      itemsArray.forEach(function (tr, i) {
-          if(i === id){
-            tr.remove();
-          }
-      });
-  }
+  }  
 }
 
 // Class Local Storage
@@ -138,4 +127,13 @@ document.forms['addBookForm'].addEventListener('submit', function (e) {
     document.forms['addBookForm'].reset();
 });
 
+//delete book from the list
+items = document.querySelectorAll('.book-list');
+deleteBtn = document.querySelectorAll('[id]');
+items.forEach(btn => btn.addEventListener('click',  function(e){
+    for (let key in items) {
+        let item = document.querySelectorAll('.red')[key];
+        item.remove();
+    }
+}));
 
