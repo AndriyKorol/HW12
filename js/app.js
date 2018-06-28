@@ -120,8 +120,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     // Получаем все книги из хранилища
     const books = store.getBooks();
     // Добавляем книги из хранилища в разметку
-    books.forEach(book => ui.addBookToList(book));
-    //delete item from the list
+    books.forEach(book => ui.addBookToList(book));    
 });
 
 // Event submit
